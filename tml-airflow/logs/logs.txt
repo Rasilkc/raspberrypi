@@ -10574,3 +10574,4 @@ Already up to date.
 [INFO 2024-11-04_21:23:58] Preprocessing DAG in tml_system_step_4_kafka_preprocess_dag-MyProject2-fb1a.py
 [INFO 2024-11-04_21:24:01] Visualization DAG in tml_system_step_7_kafka_visualization_dag-MyProject2-fb1a.py
 [INFO 2024-11-04_21:24:10] PrivateGPT Step 9 DAG in tml_system_step_9_privategpt_qdrant_dag-MyProject2-fb1a.py
+[INFO 2024-11-04_21:24:24] Docker DAG in tml_system_step_8_deploy_solution_to_docker_dag-MyProject2-fb1a.py
