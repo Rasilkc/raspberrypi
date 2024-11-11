@@ -10641,3 +10641,4 @@ origin	https://<personal access token hidden>@github.com/Rasilkc/raspberrypi.git
 [INFO 2024-11-11_19:35:52] Visualization DAG in tml_system_step_7_kafka_visualization_dag-myprojectii-fb1a.py
 [INFO 2024-11-11_19:36:04] PrivateGPT Step 9 DAG in tml_system_step_9_privategpt_qdrant_dag-myprojectii-fb1a.py
 [INFO 2024-11-11_19:36:12] Docker DAG in tml_system_step_8_deploy_solution_to_docker_dag-myprojectii-fb1a.py
+[INFO 2024-11-11_19:38:06] {'name': ['Project with slug "myprojectii-fb1a" already exists.']}
