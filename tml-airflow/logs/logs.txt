@@ -10724,3 +10724,4 @@ origin	https://<personal access token hidden>@github.com/Rasilkc/raspberrypi.git
 [INFO 2024-11-18_00:19:09] Preprocessing DAG in tml_system_step_4_kafka_preprocess_dag-myprojectii-fb1a.py
 [INFO 2024-11-18_00:19:10] Visualization DAG in tml_system_step_7_kafka_visualization_dag-myprojectii-fb1a.py
 [INFO 2024-11-18_00:19:19] PrivateGPT Step 9 DAG in tml_system_step_9_privategpt_qdrant_dag-myprojectii-fb1a.py
+[INFO 2024-11-18_00:19:23] Docker DAG in tml_system_step_8_deploy_solution_to_docker_dag-myprojectii-fb1a.py
