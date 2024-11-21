@@ -68,9 +68,11 @@ def updatebranch(sname,branch):
             headers=HEADERS,
         )
     
+    
 def doparse(fname,farr):
       data = ''
-      with open(fname, 'r', encoding='utf-8') as file: 
+      try:  
+       with open(fname, 'r', encoding='utf-8') as file: 
         data = file.readlines() 
         r=0
         for d in data:        
@@ -79,8 +81,10 @@ def doparse(fname,farr):
                 if fs[0] in d:
                     data[r] = d.replace(fs[0],fs[1])
             r += 1  
-      with open(fname, 'w', encoding='utf-8') as file: 
+       with open(fname, 'w', encoding='utf-8') as file: 
         file.writelines(data)
+      except Exception as e:
+         pass
     
 def generatedoc(**context):    
     istss1=1
@@ -440,6 +444,7 @@ def generatedoc(**context):
       doparse("/{}/docs/source/operating.rst".format(sname), ["--clientport--;{}".format(TMLCLIENTPORT[1:])])
       dockerrun = ("docker run -d -p {}:{} -p {}:{} -p {}:{} -p {}:{} \-\-env TSS=0 \-\-env SOLUTIONNAME={} \-\-env SOLUTIONDAG={} \-\-env GITUSERNAME={} " \
                  " \-\-env GITREPOURL={} \-\-env SOLUTIONEXTERNALPORT={} " \
+                 " -v /var/run/docker.sock:/var/run/docker.sock:z " \
                  " \-\-env CHIP={} \-\-env SOLUTIONAIRFLOWPORT={} " \
                  " \-\-env SOLUTIONVIPERVIZPORT={} \-\-env DOCKERUSERNAME='{}' \-\-env CLIENTPORT={} " \
                  " \-\-env EXTERNALPORT={} \-\-env KAFKACLOUDUSERNAME='{}' " \
@@ -459,6 +464,7 @@ def generatedoc(**context):
       doparse("/{}/docs/source/operating.rst".format(sname), ["--clientport--;Not Applicable"])
       dockerrun = ("docker run -d -p {}:{} -p {}:{} -p {}:{} \-\-env TSS=0 \-\-env SOLUTIONNAME={} \-\-env SOLUTIONDAG={} \-\-env GITUSERNAME={} " \
                  " \-\-env GITREPOURL={} \-\-env SOLUTIONEXTERNALPORT={} " \
+                 " -v /var/run/docker.sock:/var/run/docker.sock:z " \
                  " \-\-env CHIP={} \-\-env SOLUTIONAIRFLOWPORT={} " \
                  " \-\-env SOLUTIONVIPERVIZPORT={} \-\-env DOCKERUSERNAME='{}' " \
                  " \-\-env EXTERNALPORT={} \-\-env KAFKACLOUDUSERNAME='{}' " \
@@ -621,6 +627,24 @@ def generatedoc(**context):
  
     
     subprocess.call(["sed", "-i", "-e",  "s/--tmlbinaries--/{}/g".format(tmlbinaries), "/{}/docs/source/operating.rst".format(sname)])
+    ########################## Kubernetes
+   
+    doparse("/{}/docs/source/kube.rst".format(sname), ["--solutionnamefile--;{}.yml".format(sname)])
+    doparse("/{}/docs/source/kube.rst".format(sname), ["--solutionname--;{}".format(sname)])
+    if pgptcontainername == None:
+            kcmd = "kubectl apply -f mysql-storage.yml -f mysql-db-deployment.yml -f {}.yml".format(sname)
+            doparse("/{}/docs/source/kube.rst".format(sname), ["--kubectl--;{}".format(kcmd)])
+    else:
+            kcmd = "kubectl apply -f mysql-storage.yml -f mysql-db-deployment.yml -f privategpt.yml -f {}.yml".format(sname)
+            doparse("/{}/docs/source/kube.rst".format(sname), ["--kubectl--;{}".format(kcmd)])
+    
+    kcmd2=tsslogging.genkubeyaml(sname,containername,TMLCLIENTPORT[1:],solutionairflowport[1:],solutionvipervizport[1:],solutionexternalport[1:],
+                       sd,os.environ['GITUSERNAME'],os.environ['GITREPOURL'],chipmain,os.environ['DOCKERUSERNAME'],
+                       externalport[1:],kafkacloudusername,mqttusername,airflowport[1:],vipervizport[1:])
+
+    doparse("/{}/docs/source/kube.rst".format(sname), ["--solutionnamecode--;{}".format(kcmd2)])
+        
+    ###########################
     try:
       tmuxwindows = "None"  
       with open("/tmux/pythonwindows_{}.txt".format(sname), 'r', encoding='utf-8') as file: 
