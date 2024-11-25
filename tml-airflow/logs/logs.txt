@@ -10803,3 +10803,4 @@ origin	https://<personal access token hidden>@github.com/Rasilkc/raspberrypi.git
 [INFO 2024-11-25_19:37:21] MQTT producing DAG in tml_read_MQTT_step_3_kafka_producetotopic_dag-myprojecttwo-fb1a.py
 [INFO 2024-11-25_19:37:24] Preprocessing DAG in tml_system_step_4_kafka_preprocess_dag-myprojecttwo-fb1a.py
 [INFO 2024-11-25_19:37:25] Visualization DAG in tml_system_step_7_kafka_visualization_dag-myprojecttwo-fb1a.py
+[INFO 2024-11-25_19:37:34] PrivateGPT Step 9 DAG in tml_system_step_9_privategpt_qdrant_dag-myprojecttwo-fb1a.py
