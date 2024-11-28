@@ -10877,3 +10877,4 @@ origin	https://<personal access token hidden>@github.com/Rasilkc/raspberrypi.git
 [INFO 2024-11-28_22:05:02] Deleting topic cisco-network-privategpt in tml_system_step_2_kafka_createtopic_dag-myprojecttwo-fb1a.py
 [INFO 2024-11-28_22:05:10] MQTT producing DAG in tml_read_MQTT_step_3_kafka_producetotopic_dag-myprojecttwo-fb1a.py
 [INFO 2024-11-28_22:05:12] Preprocessing DAG in tml_system_step_4_kafka_preprocess_dag-myprojecttwo-fb1a.py
+[INFO 2024-11-28_22:05:14] Visualization DAG in tml_system_step_7_kafka_visualization_dag-myprojecttwo-fb1a.py
