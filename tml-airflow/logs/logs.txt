@@ -10960,3 +10960,4 @@ origin	https://<personal access token hidden>@github.com/Rasilkc/raspberrypi.git
 [INFO 2024-12-05_18:43:52] Deleting topic prediction-data in tml_system_step_2_kafka_createtopic_dag-myprojecttwo-fb1a.py
 [INFO 2024-12-05_18:43:54] Deleting topic cisco-network-privategpt in tml_system_step_2_kafka_createtopic_dag-myprojecttwo-fb1a.py
 [INFO 2024-12-05_18:44:01] MQTT producing DAG in tml_read_MQTT_step_3_kafka_producetotopic_dag-myprojecttwo-fb1a.py
+[INFO 2024-12-05_18:44:03] Preprocessing DAG in tml_system_step_4_kafka_preprocess_dag-myprojecttwo-fb1a.py
