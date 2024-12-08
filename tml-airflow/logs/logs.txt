@@ -11014,3 +11014,4 @@ origin	https://<personal access token hidden>@github.com/Rasilkc/raspberrypi.git
 [INFO 2024-12-08_20:42:48] Deleting topic cisco-network-preprocess in tml_system_step_2_kafka_createtopic_dag-myprojecttwo-fb1a.py
 [INFO 2024-12-08_20:42:50] Deleting topic ml-data in tml_system_step_2_kafka_createtopic_dag-myprojecttwo-fb1a.py
 [INFO 2024-12-08_20:42:51] Deleting topic prediction-data in tml_system_step_2_kafka_createtopic_dag-myprojecttwo-fb1a.py
+[INFO 2024-12-08_20:42:53] Deleting topic cisco-network-privategpt in tml_system_step_2_kafka_createtopic_dag-myprojecttwo-fb1a.py
